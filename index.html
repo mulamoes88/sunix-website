@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SUNIX Token</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #000014, #000000);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 2em;
+    }
+    .sun {
+      width: 150px;
+      height: 150px;
+      background: url('sunix-logo.png') no-repeat center/contain;
+      margin: 2em auto;
+      animation: rotate 20s linear infinite;
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to SUNIX Token</h1>
+  <div class="sun"></div>
+  <audio autoplay loop>
+    <source src="beat.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <canvas id="stars"></canvas>
+  <script>
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function createStars(count) {
+      stars = [];
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 2 + 1,
+          speed: Math.random() * 3 + 1
+        });
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'white';
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fill();
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      });
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', () => {
+      resize();
+      createStars(100);
+    });
+
+    resize();
+    createStars(100);
+    animate();
+  </script>
+</body>
+</html>
