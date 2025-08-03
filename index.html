@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SUNIX Token</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 120px 20px 60px;
+      position: relative;
+      text-align: center;
+      background: radial-gradient(circle, #ffcc00 0%, #000000 80%);
+      overflow: hidden;
+    }
+    .sun {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #FFD700 0%, #FFA500 70%, transparent 100%);
+      border-radius: 50%;
+      animation: floatSun 4s ease-in-out infinite alternate, pulse 3s infinite ease-in-out;
+      box-shadow: 0 0 80px 40px rgba(255, 215, 0, 0.5);
+      z-index: 0;
+    }
+    @keyframes floatSun {
+      0% { transform: translate(-50%, 0); }
+      100% { transform: translate(-50%, 30px); }
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 60px 20px rgba(255, 215, 0, 0.4); }
+      50% { box-shadow: 0 0 90px 30px rgba(255, 215, 0, 0.6); }
+    }
+    h1 {
+      font-size: 3.5rem;
+      color: #FFD700;
+      position: relative;
+      z-index: 1;
+      animation: fadeInDown 2s ease-out;
+    }
+    .logo {
+      width: 140px;
+      margin-top: 80px;
+      filter: drop-shadow(0 0 12px #FFD700);
+      z-index: 1;
+      position: relative;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .btns {
+      margin-top: 30px;
+    }
+    .btns a {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 28px;
+      background: linear-gradient(45deg, #FFD700, #FF8C00);
+      color: black;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      box-shadow: 0 0 15px #FFD70080;
+    }
+    .btns a:hover {
+      background: linear-gradient(45deg, #FFEA00, #FFB347);
+      transform: scale(1.08);
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeInSection 1.2s ease forwards;
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    section:nth-of-type(1) { animation-delay: 0.3s; }
+    section:nth-of-type(2) { animation-delay: 0.5s; }
+    section:nth-of-type(3) { animation-delay: 0.7s; }
+    section:nth-of-type(4) { animation-delay: 0.9s; }
+    section:nth-of-type(5) { animation-delay: 1.1s; }
+
+    @keyframes fadeInSection {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      font-size: 2rem;
+      background: linear-gradient(to right, #00ffff, #FFD700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    iframe.embed-chart {
+      width: 100%;
+      max-width: 720px;
+      height: 420px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffff40;
+    }
+
+    footer {
+      margin: 40px 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="sun"></div>
+    <img src="sunix-logo.png" class="logo" alt="Sunix Logo">
+    <h1>SUNIX Token</h1>
+    <div class="btns">
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0x6f12d6a9df78981ba8e49bf8fdd03628227239d7" target="_blank">Buy SUNIX</a>
+      <a href="https://t.me/SunixToken" target="_blank">Join Telegram</a>
+      <a href="https://bscscan.com/token/0x6f12d6a9df78981ba8e49bf8fdd03628227239d7" target="_blank">View Contract</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>📊 Tokenomics</h2>
+    <p><strong>Total Supply:</strong> 1,000,000,000<br/>
+    <strong>Tax:</strong> 1% Buy/Sell<br/>
+    <strong>Slippage:</strong> 1–2%</p>
+  </section>
+
+  <section>
+    <h2>📈 Live Chart</h2>
+    <iframe class="embed-chart" src="https://www.dextools.io/app/en/bnb/pair-explorer/0x6f12d6a9df78981ba8e49bf8fdd03628227239d7"></iframe>
+  </section>
+
+  <section>
+    <h2>💬 Telegram Community</h2>
+    <iframe src="https://t.me/SunixToken?embed=1" width="100%" height="400" frameborder="0"></iframe>
+  </section>
+
+  <section>
+    <h2>🛣️ Roadmap</h2>
+    <p>✅ Token Launch<br/>
+    🚀 Community Growth<br/>
+    📈 Listings (DEXTools, CoinGecko)<br/>
+    🌍 Marketing Campaigns<br/>
+    🎨 NFTs + Utility<br/>
+    🥳 Meme Contests</p>
+  </section>
+
+  <section>
+    <h2>🔐 Wallet Info</h2>
+    <p>Contract Address:<br/>
+    <strong>0x6f12d6a9df78981ba8e49bf8fdd03628227239d7</strong></p>
+  </section>
+
+  <footer>
+    &copy; 2025 SUNIX Token – Built for the community 🌞
+  </footer>
+
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
