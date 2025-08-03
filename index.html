@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNIX Token</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(ellipse at top, #0d0d0d, #000);
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            background-color: #111;
+            padding: 20px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-around;
+        }
+        header a {
+            color: gold;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            padding: 60px 20px;
+        }
+        .hero img {
+            width: 120px;
+            animation: rotate 10s linear infinite;
+        }
+        @keyframes rotate {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            color: gold;
+        }
+        .hero p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        .buttons a {
+            margin: 10px;
+            padding: 15px 25px;
+            background: linear-gradient(45deg, gold, orange);
+            color: black;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 0 10px gold;
+        }
+        iframe {
+            width: 90%;
+            height: 500px;
+            border: none;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#">Home</a>
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0x6f12d6a9df78981ba8e49bf8fdd03628227239d7" target="_blank">Buy SUNIX</a>
+        <a href="#chart">Live Chart</a>
+        <a href="https://t.me/SunixToken" target="_blank">Telegram</a>
+    </header>
+    <section class="hero">
+        <img src="sunix-logo.png" alt="SUNIX Logo">
+        <h1>SUNIX Token</h1>
+        <p>The future of meme energy. Powered by the sun, driven by the blockchain.</p>
+        <div class="buttons">
+            <a href="https://pancakeswap.finance/swap?outputCurrency=0x6f12d6a9df78981ba8e49bf8fdd03628227239d7" target="_blank">Buy on PancakeSwap</a>
+            <a href="https://t.me/SunixToken" target="_blank">Join Telegram</a>
+        </div>
+    </section>
+    <section id="chart">
+        <iframe src="https://poocoin.app/tokens/0x6f12d6a9df78981ba8e49bf8fdd03628227239d7"></iframe>
+    </section>
+</body>
+</html>
